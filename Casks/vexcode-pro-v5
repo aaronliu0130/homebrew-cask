@@ -1,0 +1,20 @@
+cask "vexcode-pro-v5" do
+  version :latest
+  sha256 :no_check
+
+  url "https://link.vex.com/vexcode-v5text-mac",
+      verified: "link.vex.com"
+  name "VEXcode Pro V5"
+  desc "IDE for VEX robotics"
+  homepage "https://www.vexrobotics.com/vexcode"
+
+  pkg "VEXcode Pro V5.pkg"
+
+  uninstall pkgutil: "com.vexrobotics.vct"
+
+  zap trash: [
+    "~/Library/Preferences/com.ifi.vexcode.plist",
+    "~/Library/Application Support/VEXcode Pro V5",
+    "~/Library/Caches/VEXcode Pro V5",
+  ]
+end
